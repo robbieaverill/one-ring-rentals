@@ -1,15 +1,15 @@
 {
-	"name": "silverstripe/installer",
-	"description": "The SilverStripe Framework Installer",
+	"name": "highlight/demo",
+	"description": "One Ring Rentals demo project for upgrading",
 	"require": {
 		"php": ">=5.3.2",
-		"silverstripe/cms": "~3.2.0",
-		"silverstripe/framework": "~3.2.0",
+		"silverstripe/cms": "^3.2",
+		"silverstripe/framework": "^3.2",
 		"silverstripe-themes/simple": "*",
 		"silverstripe/blog": "^2.3"
 	},
 	"config": {
-		"process-timeout": 600	
+		"process-timeout": 600
 	},
 	"minimum-stability": "dev"
 }
