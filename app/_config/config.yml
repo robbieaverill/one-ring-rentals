@@ -1,8 +1,5 @@
 ---
 Name: mysite
-After:
-  - 'framework/*'
-  - 'cms/*'
 ---
 SilverStripe\View\SSViewer:
   theme: one-ring
