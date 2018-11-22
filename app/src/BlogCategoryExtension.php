@@ -1,5 +1,12 @@
 <?php
 
+namespace Highlight\App;
+
+use DataExtension;
+use DataList;
+use Controller;
+
+
 class BlogCategoryExtension extends DataExtension
 {
     /**

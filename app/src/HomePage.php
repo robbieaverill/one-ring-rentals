@@ -1,5 +1,11 @@
 <?php
 
+namespace Highlight\App;
+
+use Page;
+use Page_Controller;
+
+
 class HomePage extends Page {
 
 }

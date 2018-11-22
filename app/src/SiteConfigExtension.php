@@ -1,5 +1,13 @@
 <?php
 
+namespace Highlight\App;
+
+use DataExtension;
+use FieldList;
+use TextField;
+use TextareaField;
+
+
 class SiteConfigExtension extends DataExtension {
 
 	private static $db = array (

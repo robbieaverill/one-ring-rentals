@@ -1,5 +1,12 @@
 <?php
 
+namespace Highlight\App;
+
+use DataObject;
+use FieldList;
+use TextField;
+
+
 class ArticleCategory extends DataObject {
 
 	private static $db = array (

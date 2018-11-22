@@ -1,5 +1,19 @@
 <?php
 
+namespace Highlight\App;
+
+use DataObject;
+use DropdownField;
+use FieldList;
+use TabSet;
+use TextField;
+use TextareaField;
+use CurrencyField;
+use ArrayLib;
+use CheckboxField;
+use UploadField;
+
+
 class Property extends DataObject {
 
 	private static $db = array (

@@ -1,5 +1,19 @@
 <?php
 
+namespace Highlight\App;
+
+use Page;
+use GridField;
+use GridFieldConfig_RecordEditor;
+use ArrayList;
+use DateTime;
+use ArrayData;
+use Page_Controller;
+use SS_HTTPRequest;
+use DBField;
+use PaginatedList;
+
+
 class ArticleHolder extends Page {
 
 	private static $has_many = array (

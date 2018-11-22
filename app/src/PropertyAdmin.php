@@ -1,5 +1,10 @@
 <?php
 
+namespace Highlight\App;
+
+use ModelAdmin;
+
+
 class PropertyAdmin extends ModelAdmin {
 
 	private static $menu_title = 'Properties';

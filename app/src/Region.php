@@ -1,5 +1,15 @@
 <?php
 
+namespace Highlight\App;
+
+use DataObject;
+use FieldList;
+use TextField;
+use HtmlEditorField;
+use UploadField;
+use Controller;
+
+
 class Region extends DataObject {
 
 	private static $db = array (

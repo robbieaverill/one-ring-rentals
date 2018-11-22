@@ -1,5 +1,14 @@
 <?php
 
+namespace Highlight\App;
+
+use Page;
+use GridField;
+use GridFieldConfig_RecordEditor;
+use Page_Controller;
+use SS_HTTPRequest;
+
+
 class RegionsPage extends Page {
 
 	private static $has_many = array (

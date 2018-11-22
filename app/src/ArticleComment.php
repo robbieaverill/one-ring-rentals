@@ -1,5 +1,10 @@
 <?php
 
+namespace Highlight\App;
+
+use DataObject;
+
+
 class ArticleComment extends DataObject {
 
 	private static $db = array (

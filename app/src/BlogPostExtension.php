@@ -1,5 +1,12 @@
 <?php
 
+namespace Highlight\App;
+
+use DataExtension;
+use FieldList;
+use CheckboxField;
+
+
 class BlogPostExtension extends DataExtension
 {
 	/**

@@ -1,5 +1,23 @@
 <?php
 
+namespace Highlight\App;
+
+use Page;
+use DateField;
+use TextareaField;
+use TextField;
+use UploadField;
+use CheckboxSetField;
+use DropdownField;
+use Page_Controller;
+use Form;
+use FieldList;
+use EmailField;
+use FormAction;
+use RequiredFields;
+use Session;
+
+
 class ArticlePage extends Page {
 
 

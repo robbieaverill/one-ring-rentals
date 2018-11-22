@@ -1,0 +1,20 @@
+mappings:
+  RegionsPage: Highlight\App\RegionsPage
+  RegionsPage_Controller: Highlight\App\RegionsPage_Controller
+  ArticleComment: Highlight\App\ArticleComment
+  Region: Highlight\App\Region
+  BlogPostExtension: Highlight\App\BlogPostExtension
+  PropertyAdmin: Highlight\App\PropertyAdmin
+  SiteConfigExtension: Highlight\App\SiteConfigExtension
+  ArticleCategory: Highlight\App\ArticleCategory
+  BlogCategoryExtension: Highlight\App\BlogCategoryExtension
+  ArticleHolder: Highlight\App\ArticleHolder
+  ArticleHolder_Controller: Highlight\App\ArticleHolder_Controller
+  PropertySearchPage: Highlight\App\PropertySearchPage
+  PropertySearchPage_Controller: Highlight\App\PropertySearchPage_Controller
+  Property: Highlight\App\Property
+  BlogExtension: Highlight\App\BlogExtension
+  HomePage: Highlight\App\HomePage
+  HomePage_Controller: Highlight\App\HomePage_Controller
+  ArticlePage: Highlight\App\ArticlePage
+  ArticlePage_Controller: Highlight\App\ArticlePage_Controller

@@ -1,5 +1,19 @@
 <?php
 
+namespace Highlight\App;
+
+use Page;
+use Page_Controller;
+use SS_HTTPRequest;
+use PaginatedList;
+use Form;
+use FieldList;
+use TextField;
+use DropdownField;
+use ArrayLib;
+use FormAction;
+
+
 class PropertySearchPage extends Page {
 
 }

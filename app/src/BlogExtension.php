@@ -1,5 +1,13 @@
 <?php
 
+namespace Highlight\App;
+
+use DataExtension;
+use Controller;
+use BlogPost;
+use DataList;
+
+
 class BlogExtension extends DataExtension
 {
 	/**
