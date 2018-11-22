@@ -3,19 +3,40 @@
 namespace Highlight\App;
 
 use Page;
-use DateField;
-use TextareaField;
-use TextField;
-use UploadField;
-use CheckboxSetField;
-use DropdownField;
-use Page_Controller;
-use Form;
-use FieldList;
-use EmailField;
-use FormAction;
-use RequiredFields;
-use Session;
+
+
+
+
+
+
+
+
+
+
+
+
+
+use SilverStripe\Assets\Image;
+use SilverStripe\Assets\File;
+use Highlight\App\Region;
+use Highlight\App\ArticleCategory;
+use Highlight\App\ArticleComment;
+use SilverStripe\ORM\FieldType\DBDate;
+use SilverStripe\Forms\DateField;
+use SilverStripe\Forms\TextareaField;
+use SilverStripe\Forms\TextField;
+use SilverStripe\AssetAdmin\Forms\UploadField;
+use SilverStripe\Forms\CheckboxSetField;
+use SilverStripe\Forms\DropdownField;
+use SilverStripe\Control\Email\Email;
+use SilverStripe\Forms\EmailField;
+use SilverStripe\Forms\FieldList;
+use SilverStripe\Forms\FormAction;
+use SilverStripe\Forms\RequiredFields;
+use SilverStripe\Forms\Form;
+use SilverStripe\Control\Session;
+use PageController;
+
 
 
 class ArticlePage extends Page {
@@ -29,19 +50,19 @@ class ArticlePage extends Page {
 
 
 	private static $has_one = array (
-		'Photo' => 'Image',
-		'Brochure' => 'File',
-		'Region' => 'Region'
+		'Photo' => Image::class,
+		'Brochure' => File::class,
+		'Region' => Region::class
 	);
 
 
 	private static $many_many = array (
-		'Categories' => 'ArticleCategory'
+		'Categories' => ArticleCategory::class
 	);
 
 
 	private static $has_many = array (
-		'Comments' => 'ArticleComment'
+		'Comments' => ArticleComment::class
 	);
 
 
@@ -50,7 +71,7 @@ class ArticlePage extends Page {
 
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
-		$fields->addFieldToTab('Root.Main', DateField::create('Date','Date of article')
+		$fields->addFieldToTab('Root.Main', DateField::create(DBDate::class,'Date of article')
 				->setConfig('showcalendar', true)
 				->setConfig('dateformat', 'd MMMM yyyy')				
 			,'Content');
@@ -73,7 +94,7 @@ class ArticlePage extends Page {
 
 		$fields->addFieldToTab('Root.Main', DropdownField::create(
 			'RegionID',
-			'Region',
+			Region::class,
 			Region::get()->map('ID','Title')
 		)->setEmptyString('-- None --'), 'Content');
 
@@ -89,7 +110,7 @@ class ArticlePage extends Page {
 	
 }
 
-class ArticlePage_Controller extends Page_Controller {
+class ArticlePage_Controller extends PageController {
 
 
 	private static $allowed_actions = array (
@@ -103,7 +124,7 @@ class ArticlePage_Controller extends Page_Controller {
 			__FUNCTION__,
 			FieldList::create(
 				TextField::create('Name',''),
-				EmailField::create('Email',''),
+				EmailField::create(Email::class,''),
 				TextareaField::create('Comment','')
 			),
 			FieldList::create(
@@ -111,7 +132,7 @@ class ArticlePage_Controller extends Page_Controller {
 					->setUseButtonTag(true)
 					->addExtraClass('btn btn-default-color btn-lg')
 			),
-			RequiredFields::create('Name','Email','Comment')
+			RequiredFields::create('Name',Email::class,'Comment')
 		)->addExtraClass('form-style');
 
 		foreach($form->Fields() as $field) {

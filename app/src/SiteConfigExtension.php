@@ -2,10 +2,15 @@
 
 namespace Highlight\App;
 
-use DataExtension;
-use FieldList;
-use TextField;
-use TextareaField;
+
+
+
+
+use SilverStripe\Forms\FieldList;
+use SilverStripe\Forms\TextField;
+use SilverStripe\Forms\TextareaField;
+use SilverStripe\ORM\DataExtension;
+
 
 
 class SiteConfigExtension extends DataExtension {

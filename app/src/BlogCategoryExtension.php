@@ -2,9 +2,13 @@
 
 namespace Highlight\App;
 
-use DataExtension;
-use DataList;
-use Controller;
+
+
+
+use SilverStripe\ORM\DataList;
+use SilverStripe\Control\Controller;
+use SilverStripe\ORM\DataExtension;
+
 
 
 class BlogCategoryExtension extends DataExtension

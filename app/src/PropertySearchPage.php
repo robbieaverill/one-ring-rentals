@@ -3,15 +3,25 @@
 namespace Highlight\App;
 
 use Page;
-use Page_Controller;
-use SS_HTTPRequest;
-use PaginatedList;
-use Form;
-use FieldList;
-use TextField;
-use DropdownField;
-use ArrayLib;
-use FormAction;
+
+
+
+
+
+
+
+
+
+use SilverStripe\Control\HTTPRequest;
+use SilverStripe\ORM\PaginatedList;
+use SilverStripe\Forms\TextField;
+use SilverStripe\Forms\DropdownField;
+use SilverStripe\ORM\ArrayLib;
+use SilverStripe\Forms\FieldList;
+use SilverStripe\Forms\FormAction;
+use SilverStripe\Forms\Form;
+use PageController;
+
 
 
 class PropertySearchPage extends Page {
@@ -19,10 +29,10 @@ class PropertySearchPage extends Page {
 }
 
 
-class PropertySearchPage_Controller extends Page_Controller {
+class PropertySearchPage_Controller extends PageController {
 
 
-	public function index(SS_HTTPRequest $request) {
+	public function index(HTTPRequest $request) {
 		$properties = Property::get();
 
 		if($search = $request->getVar('Keywords')) {

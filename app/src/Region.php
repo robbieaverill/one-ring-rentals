@@ -2,12 +2,21 @@
 
 namespace Highlight\App;
 
-use DataObject;
-use FieldList;
-use TextField;
+
+
+
 use HtmlEditorField;
-use UploadField;
-use Controller;
+
+
+use SilverStripe\Assets\Image;
+use Highlight\App\RegionsPage;
+use Highlight\App\ArticlePage;
+use SilverStripe\Forms\TextField;
+use SilverStripe\AssetAdmin\Forms\UploadField;
+use SilverStripe\Forms\FieldList;
+use SilverStripe\Control\Controller;
+use SilverStripe\ORM\DataObject;
+
 
 
 class Region extends DataObject {
@@ -19,12 +28,12 @@ class Region extends DataObject {
 
 
 	private static $has_one = array (
-		'Photo' => 'Image',
-		'RegionsPage' => 'RegionsPage'
+		'Photo' => Image::class,
+		'RegionsPage' => RegionsPage::class
 	);
 
 	private static $has_many = array (
-		'Articles' => 'ArticlePage'
+		'Articles' => ArticlePage::class
 	);
 
 	private static $summary_fields = array (

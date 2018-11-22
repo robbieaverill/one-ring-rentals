@@ -2,9 +2,13 @@
 
 namespace Highlight\App;
 
-use DataExtension;
-use FieldList;
-use CheckboxField;
+
+
+
+use SilverStripe\Forms\FieldList;
+use SilverStripe\Forms\CheckboxField;
+use SilverStripe\ORM\DataExtension;
+
 
 
 class BlogPostExtension extends DataExtension

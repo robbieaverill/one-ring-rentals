@@ -2,7 +2,10 @@
 
 namespace Highlight\App;
 
-use DataObject;
+
+use Highlight\App\ArticlePage;
+use SilverStripe\ORM\DataObject;
+
 
 
 class ArticleComment extends DataObject {
@@ -15,6 +18,6 @@ class ArticleComment extends DataObject {
 
 
 	private static $has_one = array (
-		'ArticlePage' => 'ArticlePage'
+		'ArticlePage' => ArticlePage::class
 	);
 }

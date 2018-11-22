@@ -3,26 +3,38 @@
 namespace Highlight\App;
 
 use Page;
-use GridField;
-use GridFieldConfig_RecordEditor;
-use ArrayList;
+
+
+
 use DateTime;
-use ArrayData;
-use Page_Controller;
-use SS_HTTPRequest;
-use DBField;
-use PaginatedList;
+
+
+
+
+
+use Highlight\App\ArticleCategory;
+use Highlight\App\ArticlePage;
+use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
+use SilverStripe\Forms\GridField\GridField;
+use SilverStripe\ORM\ArrayList;
+use SilverStripe\ORM\FieldType\DBDate;
+use SilverStripe\View\ArrayData;
+use SilverStripe\Control\HTTPRequest;
+use SilverStripe\ORM\FieldType\DBField;
+use SilverStripe\ORM\PaginatedList;
+use PageController;
+
 
 
 class ArticleHolder extends Page {
 
 	private static $has_many = array (
-		'Categories' => 'ArticleCategory'
+		'Categories' => ArticleCategory::class
 	);
 
 
 	private static $allowed_children = array (
-		'ArticlePage'
+		ArticlePage::class
 	);
 
 
@@ -50,7 +62,7 @@ class ArticleHolder extends Page {
 		$list = ArrayList::create();
 
 		$pages = ArticlePage::get()
-            ->sort('Date', 'ASC')
+            ->sort(DBDate::class, 'ASC')
             ->distinct(true);
 
         foreach ($pages as $page) {
@@ -79,7 +91,7 @@ class ArticleHolder extends Page {
 
 }
 
-class ArticleHolder_Controller extends Page_Controller {
+class ArticleHolder_Controller extends PageController {
 
 	private static $allowed_actions = array (
 		'category',
@@ -97,7 +109,7 @@ class ArticleHolder_Controller extends Page_Controller {
 		))->sort('Date DESC');
 	}
 
-	public function category (SS_HTTPRequest $r) {
+	public function category (HTTPRequest $r) {
 		$category = ArticleCategory::get()->byID(
 			$r->param('ID')
 		);
@@ -115,7 +127,7 @@ class ArticleHolder_Controller extends Page_Controller {
 		);
 	}
 
-	public function region (SS_HTTPRequest $r) {
+	public function region (HTTPRequest $r) {
 		$region = Region::get()->byID(
 			$r->param('ID')
 		);
@@ -133,7 +145,7 @@ class ArticleHolder_Controller extends Page_Controller {
 		);
 	}
 
-	public function date(SS_HTTPRequest $r) {
+	public function date(HTTPRequest $r) {
 		$year = $r->param('ID');
 		$month = $r->param('OtherID');
 

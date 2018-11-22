@@ -2,16 +2,31 @@
 
 namespace Highlight\App;
 
-use DataObject;
-use DropdownField;
-use FieldList;
-use TabSet;
-use TextField;
-use TextareaField;
-use CurrencyField;
-use ArrayLib;
-use CheckboxField;
-use UploadField;
+
+
+
+
+
+
+
+
+
+
+use Highlight\App\Region;
+use SilverStripe\Assets\Image;
+use SilverStripe\ORM\Filters\PartialMatchFilter;
+use SilverStripe\Forms\TextField;
+use SilverStripe\ORM\Filters\ExactMatchFilter;
+use SilverStripe\Forms\DropdownField;
+use SilverStripe\Forms\TabSet;
+use SilverStripe\Forms\FieldList;
+use SilverStripe\Forms\TextareaField;
+use SilverStripe\Forms\CurrencyField;
+use SilverStripe\ORM\ArrayLib;
+use SilverStripe\Forms\CheckboxField;
+use SilverStripe\AssetAdmin\Forms\UploadField;
+use SilverStripe\ORM\DataObject;
+
 
 
 class Property extends DataObject {
@@ -28,8 +43,8 @@ class Property extends DataObject {
 	);
 
 	private static $has_one = array (
-		'Region' => 'Region',
-		'PrimaryPhoto' => 'Image'
+		'Region' => Region::class,
+		'PrimaryPhoto' => Image::class
 	);
 
 	private static $summary_fields = array (
@@ -42,13 +57,13 @@ class Property extends DataObject {
 	public function searchableFields() {
 		return array (
 			'Title' => array (
-				'filter' => 'PartialMatchFilter',
+				'filter' => PartialMatchFilter::class,
 				'title' => 'Title',
-				'field' => 'TextField'
+				'field' => TextField::class
 			),
 			'RegionID' => array (
-				'filter' => 'ExactMatchFilter',
-				'title' => 'Region',
+				'filter' => ExactMatchFilter::class,
+				'title' => Region::class,
 				'field' => DropdownField::create('RegionID')
 							->setSource(
 								Region::get()->map('ID','Title')
@@ -56,7 +71,7 @@ class Property extends DataObject {
 							->setEmptyString('-- Any region --')
 			),
 			'FeaturedOnHomepage' => array (
-				'filter' => 'ExactMatchFilter',
+				'filter' => ExactMatchFilter::class,
 				'title' => 'Only featured'
 			)
 		);
@@ -73,7 +88,7 @@ class Property extends DataObject {
 				->setSource(ArrayLib::valuekey(range(1,10))),
 			DropdownField::create('Bathrooms')
 				->setSource(ArrayLib::valuekey(range(1,10))),
-			DropdownField::create('RegionID','Region')
+			DropdownField::create('RegionID',Region::class)
 				->setSource(Region::get()->map('ID','Title'))
 				->setEmptyString('-- Select a region --'),
 			CheckboxField::create('FeaturedOnHomepage','Feature on homepage')			

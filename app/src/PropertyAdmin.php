@@ -2,7 +2,10 @@
 
 namespace Highlight\App;
 
-use ModelAdmin;
+
+use Highlight\App\Property;
+use SilverStripe\Admin\ModelAdmin;
+
 
 
 class PropertyAdmin extends ModelAdmin {
@@ -12,7 +15,7 @@ class PropertyAdmin extends ModelAdmin {
 	private static $url_segment = 'properties';
 
 	private static $managed_models = array (
-		'Property'
+		Property::class
 	);
 
 	private static $menu_icon = 'mysite/icons/property.png';

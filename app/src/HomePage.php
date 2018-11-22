@@ -3,14 +3,16 @@
 namespace Highlight\App;
 
 use Page;
-use Page_Controller;
+
+use PageController;
+
 
 
 class HomePage extends Page {
 
 }
 
-class HomePage_Controller extends Page_Controller {
+class HomePage_Controller extends PageController {
 
 	public function LatestArticles($count = 3) {
 		return ArticlePage::get()
