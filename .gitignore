@@ -16,3 +16,4 @@ reports/
 siteconfig/
 tagfield/
 themes/simple
+.env
