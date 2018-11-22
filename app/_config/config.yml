@@ -1,8 +1,6 @@
 ---
 Name: mysite
 ---
-SilverStripe\View\SSViewer:
-  theme: one-ring
 SilverStripe\SiteConfig\SiteConfig:
   extensions:
     - Highlight\App\SiteConfigExtension

@@ -1,0 +1,34 @@
+---
+Name: testlogging
+Only:
+  Environment: test
+---
+SilverStripe\Core\Injector\Injector:
+  Psr\Log\LoggerInterface:
+    calls:
+      MailHandler: [ pushHandler, [ %$MailHandler ] ]
+  MailHandler:
+    class: Monolog\Handler\NativeMailerHandler
+    constructor:
+      - me@example.com
+      - There was an error on your test site
+      - me@example.com
+      - error
+    properties:
+      ContentType: text/html
+      Formatter: %$SilverStripe\Logging\DetailedErrorFormatter
+
+---
+Name: devlogging
+Only:
+  Environment: dev
+---
+SilverStripe\Core\Injector\Injector:
+  Psr\Log\LoggerInterface:
+    calls:
+      LogFileHandler: [ pushHandler, [ %$LogFileHandler ] ]
+  LogFileHandler:
+    class: Monolog\Handler\StreamHandler
+    constructor:
+      - "../silverstripe.log"
+      - "warning"

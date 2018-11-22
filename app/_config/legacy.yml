@@ -1,0 +1,9 @@
+---
+Name: highlightlegacy
+---
+SilverStripe\ORM\DatabaseAdmin:
+  classname_value_remapping:
+    ArticlePage: Highlight\App\ArticlePage
+    HomePage: Highlight\App\HomePage
+    PropertySearchPage: Highlight\App\PropertySearchPage
+    RegionsPage: Highlight\App\RegionsPage

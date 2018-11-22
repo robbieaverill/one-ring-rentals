@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "220432423c543fd7c5dc21cfe818da28",
+    "content-hash": "acf251d70dad411a7ea63d8dbd79ad12",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -1431,7 +1431,7 @@
         },
         {
             "name": "silverstripe/config",
-            "version": "1.0.8",
+            "version": "1.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/silverstripe-config.git",
@@ -1467,6 +1467,57 @@
             ],
             "description": "SilverStripe configuration based on YAML and class statics",
             "time": "2018-06-17T22:13:57+00:00"
+        },
+        {
+            "name": "silverstripe/errorpage",
+            "version": "1.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/silverstripe/silverstripe-errorpage.git",
+                "reference": "eb63745b7c99b02dbe128e1b65ed80ab5bdaa82d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-errorpage/zipball/eb63745b7c99b02dbe128e1b65ed80ab5bdaa82d",
+                "reference": "eb63745b7c99b02dbe128e1b65ed80ab5bdaa82d",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/cms": "^4@dev",
+                "silverstripe/vendor-plugin": "^1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~5.7"
+            },
+            "type": "silverstripe-vendormodule",
+            "autoload": {
+                "psr-4": {
+                    "SilverStripe\\ErrorPage\\": "src/",
+                    "SilverStripe\\ErrorPage\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "SilverStripe",
+                    "homepage": "http://silverstripe.com"
+                },
+                {
+                    "name": "The SilverStripe Community",
+                    "homepage": "http://silverstripe.org"
+                }
+            ],
+            "description": "ErrorPage component for SilverStripe CMS",
+            "homepage": "http://silverstripe.org",
+            "keywords": [
+                "error",
+                "errorpage",
+                "silverstripe"
+            ],
+            "time": "2018-11-07T04:57:46+00:00"
         },
         {
             "name": "silverstripe/framework",
@@ -1666,6 +1717,136 @@
             ],
             "description": "A module to make managing pages in a GridField easy without losing any of the functionality that you're used to in the CMS.",
             "time": "2018-06-28T23:04:53+00:00"
+        },
+        {
+            "name": "silverstripe/recipe-cms",
+            "version": "4.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/silverstripe/recipe-cms.git",
+                "reference": "077a1bf4b05a50fc63964df775c9342e862c7c50"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/silverstripe/recipe-cms/zipball/077a1bf4b05a50fc63964df775c9342e862c7c50",
+                "reference": "077a1bf4b05a50fc63964df775c9342e862c7c50",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/admin": "1.2.2@stable",
+                "silverstripe/asset-admin": "1.2.2@stable",
+                "silverstripe/campaign-admin": "1.2.2@stable",
+                "silverstripe/cms": "4.2.2@stable",
+                "silverstripe/errorpage": "1.2.2@stable",
+                "silverstripe/graphql": "2.0.2@stable",
+                "silverstripe/recipe-core": "4.2.2@stable",
+                "silverstripe/recipe-plugin": "^1.2",
+                "silverstripe/reports": "4.2.2@stable",
+                "silverstripe/siteconfig": "4.2.2@stable",
+                "silverstripe/versioned": "1.2.2@stable"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7"
+            },
+            "type": "silverstripe-recipe",
+            "extra": {
+                "project-files": [
+                    "app/src/*"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "SilverStripe recipe for fully featured page and asset content editing",
+            "homepage": "http://silverstripe.org",
+            "time": "2018-11-07T06:16:11+00:00"
+        },
+        {
+            "name": "silverstripe/recipe-core",
+            "version": "4.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/silverstripe/recipe-core.git",
+                "reference": "0e88e09e4c41858322c597753e87452a0bcba5e3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/silverstripe/recipe-core/zipball/0e88e09e4c41858322c597753e87452a0bcba5e3",
+                "reference": "0e88e09e4c41858322c597753e87452a0bcba5e3",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/assets": "1.2.2@stable",
+                "silverstripe/config": "1.0.7@stable",
+                "silverstripe/framework": "4.2.2@stable",
+                "silverstripe/recipe-plugin": "^1.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7"
+            },
+            "type": "silverstripe-recipe",
+            "extra": {
+                "project-files": [
+                    "app/*"
+                ],
+                "public-files": [
+                    ".htaccess",
+                    "web.config",
+                    "index.php",
+                    "install.php",
+                    "install-frameworkmissing.html"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "SilverStripe framework-only core recipe",
+            "homepage": "http://silverstripe.org",
+            "time": "2018-11-07T06:13:38+00:00"
+        },
+        {
+            "name": "silverstripe/recipe-plugin",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/silverstripe/recipe-plugin.git",
+                "reference": "88cd7ed3a0c07a0b24b70ee43d855488d7f1ac7e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/silverstripe/recipe-plugin/zipball/88cd7ed3a0c07a0b24b70ee43d855488d7f1ac7e",
+                "reference": "88cd7ed3a0c07a0b24b70ee43d855488d7f1ac7e",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.1"
+            },
+            "require-dev": {
+                "composer/composer": "^1.2"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "SilverStripe\\RecipePlugin\\RecipePlugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "SilverStripe\\RecipePlugin\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Damian Mooyman",
+                    "email": "damian@silverstripe.com"
+                }
+            ],
+            "description": "Helper plugin to install SilverStripe recipes",
+            "time": "2018-04-11T07:22:09+00:00"
         },
         {
             "name": "silverstripe/reports",
@@ -2597,7 +2778,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.3.2"
+        "php": ">=5.6"
     },
     "platform-dev": []
 }

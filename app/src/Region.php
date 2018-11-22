@@ -5,7 +5,7 @@ namespace Highlight\App;
 
 
 
-use HtmlEditorField;
+
 
 
 use SilverStripe\Assets\Image;
@@ -16,6 +16,8 @@ use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Control\Controller;
 use SilverStripe\ORM\DataObject;
+use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
+
 
 
 
@@ -54,7 +56,7 @@ class Region extends DataObject {
 	public function getCMSFields() {
 		$fields = FieldList::create(
 			TextField::create('Title'),
-			HtmlEditorField::create('Description'),
+			HTMLEditorField::create('Description'),
 			$uploader = UploadField::create('Photo')
 		);
 
