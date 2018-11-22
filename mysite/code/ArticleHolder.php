@@ -40,9 +40,13 @@ class ArticleHolder extends Page {
             ->distinct(true);
 
         foreach ($pages as $page) {
-            list($year, $monthName, $monthNumber) = explode('-', $page->Date);
+            list($year, $monthNumber, $dayNumber) = explode('-', $page->Date);
+
+            $dateObj   = DateTime::createFromFormat('!m', $monthNumber);
+            $monthName = $dateObj->format('F');
 
             $list->push(ArrayData::create(array(
+                'Key' => $year . $monthNumber,
                 'Year' => $year,
                 'MonthName' => $monthName,
                 'MonthNumber' => $monthNumber,
@@ -53,6 +57,7 @@ class ArticleHolder extends Page {
                     ->count()
             )));
         }
+        $list->removeDuplicates('Key');
 
 		return $list;
 	}
