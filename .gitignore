@@ -18,5 +18,5 @@ tagfield/
 themes/simple
 .env
 resources/
-public/
 silverstripe.org
+public/assets
